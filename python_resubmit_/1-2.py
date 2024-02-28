@@ -119,12 +119,13 @@ for link in link_list_50:
     
     # 文字エンコーディング変更
     shop_list = [codecs.encode(str(element), 'cp932', 'ignore').decode('cp932') for element in shop_list]
+    
     df = df._append({"店舗名": shop_list[0],
                     "電話番号": shop_list[1],
                     "メールアドレス": shop_list[2],
                     "都道府県": shop_list[3],
                     "市区町村": shop_list[4],
-                    "番地": f'="{str(shop_list[5])}"',
+                    "番地": f'\'{str(shop_list[5])}',
                     "建物名": shop_list[6],
                     "URL": shop_list[7],
                     "SSL": shop_list[8]},
